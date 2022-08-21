@@ -158,7 +158,7 @@ Possibilita um relacionamento entre Classes/Objetos, no qual estes possam pedir 
 
 ## Interface
 
-Define um contrato que deve ser seguido pela Classe que a implementa. Quando uma Classe implementa uma interface, ela se compromete a realizar todos os comportamentos que a Interface disponibilidade.
+Define um contrato que deve ser seguido pela Classe que a implementa. Quando uma Classe implementa uma interface, ela se compromete a realizar todos os comportamentos que a Interface disponibiliza.
 Ex:
 
         interface A { // define uma interface
