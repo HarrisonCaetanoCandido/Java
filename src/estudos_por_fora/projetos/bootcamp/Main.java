@@ -31,16 +31,10 @@
 package estudos_por_fora.projetos.bootcamp;
 
 import java.time.LocalDate;
+import estudos_por_fora.projetos.bootcamp.classes.*;
 
-import estudos_por_fora.projetos.bootcamp.classes.Curso;
-import estudos_por_fora.projetos.bootcamp.classes.Mentoria;
-
-public class Main{
+public class Main {
     public static void main(String[] args) {
-        String nome;
-        int conteudosInscritos;
-        int conteudosConcluidos;
-
         Curso curso1 = new Curso();
         Curso curso2 = new Curso();
         Mentoria mentoria = new Mentoria();
@@ -68,10 +62,31 @@ public class Main{
         System.out.println(mentoria.getDescricao());
         System.out.println("Data de criação: " + mentoria.getData());
 
-        /*Métodos:
-        inscrever
-        progredir
-        calcularTotalXp
-        */
+        Bootcamp bootcamp = new Bootcamp(); // instancia um bootcamp com dois cursos e uma mentoria
+        bootcamp.setNome("Bootcamp Java Developer");
+        bootcamp.setDescricao("Descricao bootcamp java developer");
+        bootcamp.getConteudos().add(curso1);
+        bootcamp.getConteudos().add(curso2);
+        bootcamp.getConteudos().add(mentoria);
+
+        Dev devHarrison = new Dev();
+        devHarrison.setNome("Harrison");
+        System.out.println("Conteúdos inscritos(antes de inscrever o dev): " + devHarrison.getConteudosInscritos());
+        devHarrison.inscreverBootcamp(bootcamp);
+        devHarrison.progredir(); // progredir aqui é concluir
+        System.out.println("Conteúdos inscritos: " + devHarrison.getConteudosInscritos());
+        System.out.println("Conteúdos inscritos: " + devHarrison.getConteudosConcluidos());
+        System.out.println("Xp: " + devHarrison.calcularTotalXp());
+
+        Dev devJoao = new Dev();
+        devJoao.setNome("João");
+        System.out.println("Conteúdos inscritos(antes de inscrever o dev): " + devJoao.getConteudosInscritos());
+        devJoao.inscreverBootcamp(bootcamp);
+        devJoao.progredir(); // progredir aqui é concluir
+        devJoao.progredir(); // progredir aqui é concluir
+        devJoao.progredir(); // progredir aqui é concluir
+        System.out.println("Conteúdos inscritos: " + devHarrison.getConteudosInscritos());
+        System.out.println("Conteúdos concluidos: " + devHarrison.getConteudosConcluidos());
+        System.out.println("Xp: " + devJoao.calcularTotalXp());
     }
 }

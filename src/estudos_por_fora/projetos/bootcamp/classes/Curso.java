@@ -1,30 +1,9 @@
 package estudos_por_fora.projetos.bootcamp.classes;
 
-public class Curso {
-    // atributos:
-    private String titulo;
-    private String descricao;
+public class Curso extends Conteudo {
     private int cargaHoraria;
 
-    public Curso() {
-
-    }
-
-    public String getTitulo() {
-        return titulo;
-    }
-
-    public void setTitulo(String titulo) {
-        this.titulo = titulo;
-    }
-
-    public String getDescricao() {
-        return descricao;
-    }
-
-    public void setDescricao(String descricao) {
-        this.descricao = descricao;
-    }
+    public Curso() {}
 
     public int getCargaHoraria() {
         return cargaHoraria;
@@ -34,8 +13,7 @@ public class Curso {
         this.cargaHoraria = cargaHoraria;
     }
 
-    public void calcularXp() {
-
+    public double calcularXp() {
+        return XP_PADRAO * cargaHoraria;
     }
-
 }
